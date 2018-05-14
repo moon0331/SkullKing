@@ -1,5 +1,5 @@
 package skullking;
 
-public class ScoreBoard {
+public class ScoreBoard implements ScoreBoardInfo{
 
 }
