@@ -1,5 +1,5 @@
 package skullking;
 
-public class Card {
+public class Card implements CardInfo{
 
 }
