@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class GameStarter {
 	
-	private int numOfPlayer;
-	protected Player[] p;
+	protected int numOfPlayer;
 	private String[] NameList= {"Momo", "Joy", "Kei", "Solar", "Jisoo"};
 	
 	public int setNumOfPlayer() {
 		Scanner s=new Scanner(System.in);
+		int numOfPlayer=0;
 		while(true) {
 			System.out.println("Input the number of player : ");
 			try {
@@ -26,11 +26,12 @@ public class GameStarter {
 		return numOfPlayer;
 	}
 	
-	public void makePlayer() {
-		p=new Player[numOfPlayer];
+	public Player[] makePlayer() {
+		Player[] p=new Player[numOfPlayer];
 		for(int i=0; i<p.length; i++) {
 			p[i].name=NameList[i]; //이름 결정(나중에 입력할지?), 나머지 값들은 0으로 초기화됨
 		}
+		return p;
 	}
 
 }
