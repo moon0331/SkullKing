@@ -2,7 +2,7 @@ package skullking;
 
 import java.util.Scanner;
 
-public class Game extends GameStarter{
+public class Game extends GameStarter {
 	
 	Player[] p;
 	
