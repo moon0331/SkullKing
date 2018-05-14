@@ -2,7 +2,7 @@ package skullking;
 
 import java.util.Scanner;
 
-public class GameStarter {
+public class Game {
 	public int setNumOfPlayer() {
 		Scanner s=new Scanner(System.in);
 		int numOfPlayer;

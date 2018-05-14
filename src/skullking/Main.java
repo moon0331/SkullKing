@@ -4,7 +4,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		GameStarter start=new GameStarter();
+		Game newgame=new Game();
+		int numOfPlayer=newgame.setNumOfPlayer(); //사람 수 결정
 	}
 
 }
