@@ -1,13 +1,12 @@
 package skullking;
 
-public class Comparator implements ComparatorInfo { //구조체 필요?
-	//카드를 내는 곳으로 정의함
+public class Comparator implements ComparatorInfo { 
+	//where people put card
 	Card present_card;
 	int present_card_owner;
 	Card strongest_card;
 	int strongest_card_owner;
 	int constraint;
-	// int winner;
 	
 	public void setCard(int owner, Card card) {
 		present_card=card;
@@ -19,7 +18,7 @@ public class Comparator implements ComparatorInfo { //구조체 필요?
 			strongest_card=present_card;
 			strongest_card_owner=present_card_owner;
 		}else {
-			if(stronger()) { //실제 세기 비교하는
+			if(true) { //real compare card (if condition may change)
 				//교체
 			}
 		}
