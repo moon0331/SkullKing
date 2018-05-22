@@ -2,27 +2,25 @@ package skullking;
 
 public class Card implements CardInfo {
 	private int idx;
-	private String card_type;//ì¹´ë“œ íƒ€ì… stringê¼´ë¡œ í‘œí˜„í•˜ë“ ì§€ ì•„ë‹˜ intë¡œ í‘œí˜„í•˜ë“ ì§€
+	private String card_type;//Ä«µå Å¸ÀÔ string²Ã·Î Ç¥ÇöÇÏµçÁö ¾Æ´Ô int·Î Ç¥ÇöÇÏµçÁö
 	private int card_num; 
 	/*
 	 * (skullking, 
 	 * pirate, 
-	 * scarymarry-í•´ì ìœ¼ë¡œë„ ì“¸ ìˆ˜ ìˆê³  í•­ë³µê¸°ë¡œë„ ì“¸ ìˆ˜ ìˆëŠ”, 
+	 * scarymarry-ÇØÀûÀ¸·Îµµ ¾µ ¼ö ÀÖ°í Ç×º¹±â·Îµµ ¾µ ¼ö ÀÖ´Â, 
 	 * mermaid, 
 	 * black, 
 	 * gold, red, blue, 
 	 * escape)
 	 * 
-	 * enum ë‚˜ì¤‘ì— ì‚¬ìš©í• ìˆ˜ë„ ìˆìŒ
+	 * enum ³ªÁß¿¡ »ç¿ëÇÒ¼öµµ ÀÖÀ½
 	*/
 	
-	//getter setter ë‹¤ì‹œ ìˆ˜ì •í•¨.
-	
-	/* ë°˜ë³µë¬¸ìœ¼ë¡œ ì—°ì†ì ìœ¼ë¡œ ìƒì„±ìë¥¼ ë¶ˆëŸ¬ì˜¤ê¸° ë•Œë¬¸ì—, ìƒì„±ìëŠ” í•˜ë‚˜ì˜ ëª¨ì–‘ìœ¼ë¡œ í†µì¼í•´ì•¼ í•¨. public Card(int i)ë¡œ idx=ië¡œ ë§Œë“  í›„, 
-	 * iì˜ ë²”ìœ„ì— ë”°ë¼ ì¹´ë“œì˜ íŠ¹ì§•ì„ ë¶„ë¥˜(ifì ˆ í™œìš©)í•´ì•¼ í•¨. 
-	 * (Ex: 0ë²ˆì€ escape, 1~13ì€ red, 14~26ì€ blue, ..., në²ˆì€ skullkingìœ¼ë¡œ í•œë‹¤ë©´,
-	 * ê°ê°ì˜ ë²”ìœ„ì— ë”°ë¼ card_numê°€ card_typeê°€ ë‹¬ë¼ì§ˆ ê²ƒì„)
-	 * idxê°€ primary keyì˜ ì—­í• ì„ í•œë‹¤ ë³´ë©´ ë¨. (í•„ìš”ì—†ì–´ì§€ë©´ ì§€ìš¸ê±°ì„)
+	/* ¹İº¹¹®À¸·Î ¿¬¼ÓÀûÀ¸·Î »ı¼ºÀÚ¸¦ ºÒ·¯¿À±â ¶§¹®¿¡, »ı¼ºÀÚ´Â ÇÏ³ªÀÇ ¸ğ¾çÀ¸·Î ÅëÀÏÇØ¾ß ÇÔ. public Card(int i)·Î idx=i·Î ¸¸µç ÈÄ, 
+	 * iÀÇ ¹üÀ§¿¡ µû¶ó Ä«µåÀÇ Æ¯Â¡À» ºĞ·ù(ifÀı È°¿ë)ÇØ¾ß ÇÔ. 
+	 * (Ex: 0¹øÀº escape, 1~13Àº red, 14~26Àº blue, ..., n¹øÀº skullkingÀ¸·Î ÇÑ´Ù¸é,
+	 * °¢°¢ÀÇ ¹üÀ§¿¡ µû¶ó card_num°¡ card_type°¡ ´Ş¶óÁú °ÍÀÓ)
+	 * idx°¡ primary keyÀÇ ¿ªÇÒÀ» ÇÑ´Ù º¸¸é µÊ. (ÇÊ¿ä¾ø¾îÁö¸é Áö¿ï°ÅÀÓ)
 	 */
 	
 	public Card(int i) {
@@ -30,62 +28,50 @@ public class Card implements CardInfo {
 		
 		if(idx==0)
 		{
-			card_type='escape'; 
+			card_type="escape"; 
 		} 
 		
 		else if(idx<=13)
 		{
-			card_type='gold';//1~13 gold
+			card_type="gold";//1~13 gold
 		}
 		
 		else if(idx<=26)
 		{
-			card_type='red'; //14~26 red
+			card_type="red"; //14~26 red
 		}
 		
 		else if(idx<=39)
 		{
-			card_type='blue'; //27~39 blue
+			card_type="blue"; //27~39 blue
 		}
 		
 		else if(idx<=52)
 		{
-			card_type='black';//40~52 black
+			card_type="black";//40~52 black
 		}
 		
 		else if(idx==53)
 		{
-			card_type='mermaid';
+			card_type="mermaid";
 		} 
 		
 		else if(idx==54)
 		{
-			card_type='pirate';
+			card_type="pirate";
 		}
 		
 		else if(idx==55)
 		{
-			card_type='scarymarry'; //ì´ê±° comparator ì—ì„œ ì²˜ë¦¬í•  ë•Œ ì¡°
+			card_type="scarymarry"; //ÀÌ°Å comparator ¿¡¼­ Ã³¸®ÇÒ ¶§ Á¶
 		}
 		
 		else 
 		{
-			card_type='skullking'; //idx =56ì¼ ë•Œ ìŠ¤ì»¬
+			card_type="skullking"; //idx =56ÀÏ ¶§ ½ºÄÃ
 		}
 		
 	}
-	
-    /*public Card(String Card_type, int Card_num) //ì¹´ë“œ ìƒì„±ì Card_typeì€ ìŠ¤ì»¬í‚¹, í•´ì ,ì¸ì–´, ê³¨ë“œ ,ë ˆë“œ ë“±ë“± ì¢…ë¥˜ë¥¼ ë°›ì„ê±°ê³  Card_numì€ ì¹´ë“œë²ˆí˜¸ ì˜ˆë¥¼ ë“¤ë©´ ë¸”ë£¨ 12 ì´ë ‡ê²Œ 1~13ì˜ ê°’ì„ ê°€ì§ˆ ìˆ˜ ìˆë„ë¡ 
-    {
-    	this.card_type=card_type; 
-    	this.card_num=card_num;
-    } 
-    
-    public Card(String Card_type)//ìŠ¤ì»¬í‚¹ì´ë‚˜ í•´ì ê°™ì€ ê²½ìš°ëŠ” ìˆ«ìì¹´ë“œë“¤ì´ë‘ ë‹¤ë¥´ê²Œ ìˆ«ìê°€ ì—†ìœ¼ë¯€ë¡œ ìƒì„±ìë¥¼ ë‘ ê°œ ë§Œë“¤ì–´ì„œ ì§ê´€ì„±ì„ ë†’ì„ 
-    {
-    	this.Card_type=Card_type; 
-        this.Card_num=0; 
-    } */
     
 	public String getType() {
 		return card_type;
@@ -103,46 +89,4 @@ public class Card implements CardInfo {
 		card_num=num;
 	}
 	
-	//ë³´ë„ˆìŠ¤ ì ìˆ˜
-	
-   /*if(Card_type='skullking')
-   {
-	   Card_num=16; //ìƒê°í•´ë´¤ëŠ”ë° ì¹´ë“œë„˜ë²„ë¡œ ì„¸ê¸° ë¹„êµê°€ëŠ¥í•´ ìˆ«ìì¹´ë“œë“¤ì€ 1~13ì´ê³  ì¸ì–´ëŠ” 14 í•´ì ì€ 15 ìŠ¤ì»¬í‚¹ì€ 16 ì´ë ‡ê²Œ í•˜ë©´ ë”± ì„¸ê¸° ë¹„êµ ê°€ëŠ¥í•˜ë‹ˆê¹Œ 
-   } 
-   
-   if(Card_type='pirate')
-   {
-	   Card_num=15;
-   }
-   
-   if(Card_type='mermaid')
-   {
-	   Card_num=14;
-   } 
-   
-   if(Card_type='scarymarry')//ì´ ì¹´ë“œëŠ” ìƒì„±ëœ ì´í›„ì— pirateë¡œë„ ì“¸ ìˆ˜ ìˆê³  escapeìœ¼ë¡œë„ ì“¸ ìˆ˜ ìˆìœ¼ë‹ˆê¹Œ Card_numì„ 1ë¡œ ë„£ìœ¼ë©´ pirateë¡œ ì·¨ê¸‰í•˜ê³  0ìœ¼ë¡œ ë„£ìœ¼ë©´ escapeìœ¼ë¡œ ì·¨ê¸‰í•˜ë„ë¡ 
-   {
-	   if(Card_num==1)
-	   {
-		   Card_num=15;
-	   }
-	   else 
-	   {
-		   Card_num=0;
-	   }
-	   
-   }
-   
-   if(Card_type='escape')
-   {
-	   Card_num=0;
-   }*/
-   
-   
-   
-   
-	//public boolean hasBonusScore() {
-		//return grade==SKULLKING;
-		//return grade==100;
-	//} ë³´ë„ˆìŠ¤ ì ìˆ˜ë¥¼ ì–»ëŠ” ê±´ ì¹´ë“œ í´ë˜ìŠ¤ì—ì„œ ì°¨ã…“ë¦¬í•  ìˆ˜ ìˆëŠ” ë¶€ë¶„ì´ ì•„ë‹Œ ê²ƒ ê°™ìŒ ì˜ˆë¥¼ ë“¤ë©´ ìŠ¤ì»¬í‚¹ì´ ë‹¤ë¥¸ í•´ì ë“¤ ì‚¼ì¼°ì„ ë•Œ í•´ì  í•œ ë§ˆë¦¬ë‹¹ ë³´ë„ˆìŠ¤ ì ìˆ˜ 30ì ì”©ì„ ì–»ëŠ”ê±´ë° ë‹¤ë¥¸ ì‚¬ëŒë“¤ ì¹´ë“œë„ ì•Œì•„ì•¼í•˜ê³  ë˜ ìê¸°ê°€ ì˜ˆì¸¡í•œ ìŠ¹ìˆ˜ê°€ ì‹¤ìŠ¹ìˆ˜ë‘ ê°™ì„ ë•Œë§Œ ì–»ëŠ”ê±°ë¼ 
 }
