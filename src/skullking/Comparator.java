@@ -11,7 +11,7 @@ public class Comparator implements ComparatorInfo {
 	public void setCard(int owner, Card card) {
 		present_card=card;
 		present_card_owner=owner;
-		//if() constraint= 제약조건 걸리는 때
+		//if() constraint= constraint
 	}
 	public void compare() {
 		if(strongest_card==null) {
@@ -19,14 +19,14 @@ public class Comparator implements ComparatorInfo {
 			strongest_card_owner=present_card_owner;
 		}else {
 			if(true) { //real compare card (if condition may change)
-				//교체
+				//change winner card
 			}
 		}
 	}
 	public int getWinner() {
 		return strongest_card_owner;
 	}
-	public boolean stronger() { //카드 세기 비교
+	public boolean stronger() { //modify
 		return false;
 	}
 }
