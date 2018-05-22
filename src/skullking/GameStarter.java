@@ -33,7 +33,7 @@ public class GameStarter {
 	public Player[] makePlayer() {
 		player=new Player[numOfPlayer];
 		for(int i=0; i<player.length; i++) {
-			player[i].name=NameList[i]; 
+			player[i].setName(NameList[i]); 
 		}
 		return player;
 	}
