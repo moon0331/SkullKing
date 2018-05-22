@@ -27,7 +27,52 @@ public class Card implements CardInfo {
 	
 	public Card(int i) {
 		idx=i;
-		//i의 범위에 따라 카드 정보 설정
+		
+		if(idx==0)
+		{
+			card_type='escape'; 
+		} 
+		
+		else if(idx<=13)
+		{
+			card_type='gold';//1~13 gold
+		}
+		
+		else if(idx<=26)
+		{
+			card_type='red'; //14~26 red
+		}
+		
+		else if(idx<=39)
+		{
+			card_type='blue'; //27~39 blue
+		}
+		
+		else if(idx<=52)
+		{
+			card_type='black';//40~52 black
+		}
+		
+		else if(idx==53)
+		{
+			card_type='mermaid';
+		} 
+		
+		else if(idx==54)
+		{
+			card_type='pirate';
+		}
+		
+		else if(idx==55)
+		{
+			card_type='scarymarry'; //이거 comparator 에서 처리할 때 조
+		}
+		
+		else 
+		{
+			card_type='skullking'; //idx =56일 때 스컬
+		}
+		
 	}
 	
     /*public Card(String Card_type, int Card_num) //카드 생성자 Card_type은 스컬킹, 해적,인어, 골드 ,레드 등등 종류를 받을거고 Card_num은 카드번호 예를 들면 블루 12 이렇게 1~13의 값을 가질 수 있도록 
