@@ -30,14 +30,11 @@ public class GameStarter {
 		return numOfPlayer;
 	}
 	
-	public void makePlayer() {
+	public Player[] makePlayer() {
 		player=new Player[numOfPlayer];
 		for(int i=0; i<player.length; i++) {
-			player[i].name=NameList[i]; //이름 결정(나중에 입력할지?), 나머지 값들은 0으로 초기화됨
+			player[i].name=NameList[i]; 
 		}
-	}
-	
-	public Player[] getPlayerInfo() {
 		return player;
 	}
 
