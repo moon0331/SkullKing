@@ -27,6 +27,7 @@ public class Player implements PlayerInfo {
 				break; 
 		}
 		s.close();
+		deck.remove(val);
 		return deck.get(val);
 	}
 	public void setPredictWin(int numOfWin) { //predict the number of win
