@@ -11,6 +11,10 @@ public class Player implements PlayerInfo {
 	private boolean won_previous_game;
 	private List<Card> deck;
 	
+	public void setName(String s) {
+		name=s;
+	}
+	
 	public void addCard(Card c) { //add card from game-deck
 		deck.add(c);
 	}
