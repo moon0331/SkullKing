@@ -14,13 +14,20 @@ public class Main {
 		
 		System.out.println("Game Start!");
 		for(int round=1;round<=10;round++) {
-			Game game=new Game(player);
+			Game game=new Game(player); //play round
 			game.playGame(round); //real game process
 			int winner=game.getWinner();
+			/* need process to calculate scores!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			 * int winner_score=____________________;
+			 * */
+			for(int i=0; i<player.length; i++) {
+				/*if(i==winner) player[i].calScore(winner_score);
+				else player[i].calScore(______);*/
+			}
 			// calculate scores
 		}
-		int player_winner=-1;//represent winner (name can be changed)
-		System.out.println("Winner is : "+player_winner);
+		//int final_player_winner=-1; //represent real winner
+		//System.out.println("Winner is : "+player_winner);
 	}
 
 }
