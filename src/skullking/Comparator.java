@@ -2,11 +2,11 @@ package skullking;
 
 public class Comparator implements ComparatorInfo { 
 	//where people put card
-	Card present_card;
-	int present_card_owner;
-	Card strongest_card;
-	int strongest_card_owner;
-	int constraint;
+	private Card present_card;
+	private int present_card_owner;
+	private Card strongest_card;
+	private int strongest_card_owner;
+	private int constraint; //constraint to set a card
 	
 	public void setCard(int owner, Card card) {
 		present_card=card;
