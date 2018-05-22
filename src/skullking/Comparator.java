@@ -11,7 +11,10 @@ public class Comparator implements ComparatorInfo {
 	public void setCard(int owner, Card card) {
 		present_card=card;
 		present_card_owner=owner;
-		//if() constraint= constraint
+		/* if(){ //check that the card can included
+		 * 
+		 * }
+		 * */
 	}
 	public void compare() {
 		if(strongest_card==null) {
