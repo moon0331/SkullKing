@@ -3,8 +3,8 @@ package skullking;
 public class Card implements CardInfo {
 	private int idx;
 	private String card_type;//카드 타입 string꼴로 표현하든지 아님 int로 표현하든지
-	private int card_num; 
-	/*
+	private int card_num;  
+	/*  
 	 * (skullking, 
 	 * pirate, 
 	 * scarymarry-해적으로도 쓸 수 있고 항복기로도 쓸 수 있는, 
@@ -31,37 +31,41 @@ public class Card implements CardInfo {
 			card_type="escape"; 
 		} 
 		
-		else if(idx<=13)
+		else if(i<=13)
 		{
 			card_type="gold";//1~13 gold
+			card_num=i%13+1;
 		}
 		
-		else if(idx<=26)
+		else if(i<=26)
 		{
 			card_type="red"; //14~26 red
+			card_num=i%13+1;
 		}
 		
-		else if(idx<=39)
+		else if(i<=39)
 		{
 			card_type="blue"; //27~39 blue
+			card_num=i%13+1;
 		}
 		
-		else if(idx<=52)
+		else if(i<=52)
 		{
 			card_type="black";//40~52 black
+			card_num=i%13+1;
 		}
 		
-		else if(idx==53)
+		else if(i==53)
 		{
 			card_type="mermaid";
 		} 
 		
-		else if(idx==54)
+		else if(i==54)
 		{
 			card_type="pirate";
 		}
 		
-		else if(idx==55)
+		else if(i==55)
 		{
 			card_type="scarymarry"; //이거 comparator 에서 처리할 때 조
 		}
