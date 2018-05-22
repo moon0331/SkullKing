@@ -26,6 +26,7 @@ public class Player implements PlayerInfo {
 			if(true) /*in this case, you should modify the condition that only pick the right card*/
 				break; 
 		}
+		s.close();
 		return deck.get(val);
 	}
 	public void setPredictWin(int numOfWin) { //predict the number of win
