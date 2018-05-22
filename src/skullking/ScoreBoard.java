@@ -1,12 +1,16 @@
 package skullking;
 
+class Database{		// should be modified
+	private int player_num;
+	private int score;
+}
+
 public class ScoreBoard implements ScoreBoardInfo  {
-	
-	public int score; 
-	score=Player.score; 
-	
-
-	System.out.println("Player의 점수는 "+score);
-    
-
+	Database[] DB;
+	public ScoreBoard(int num) {
+		DB=new Database[num];
+	}
+	public update(int player_num, int gained_score) {
+		//blahblah
+	}
 }
