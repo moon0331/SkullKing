@@ -10,7 +10,7 @@ public class ScoreBoard implements ScoreBoardInfo  {
 	public ScoreBoard(int num) {
 		DB=new Database[num];
 	}
-	public update(int player_num, int gained_score) {
+	public void update(int player_num, int gained_score) {
 		//blahblah
 	}
 }
