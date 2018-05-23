@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Game{
 	private Player[] p;
-	private int numOfPlayer;
+	//private int numOfPlayer;
 	private int winner; //winner of the game
 	private CardDeck deck;
 	private Comparator comparator;
