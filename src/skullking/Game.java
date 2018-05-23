@@ -35,6 +35,7 @@ public class Game{
 			comparator.setCard(i,c); //on comparator
 		}
 		winner=comparator.getWinner();
+		//or use int[] calculatedScore=calScore(player); function that calculate gained/losed score
 		
 		s.close();
 	}
