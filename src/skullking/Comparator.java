@@ -21,7 +21,7 @@ public class Comparator implements ComparatorInfo {
 			strongest_card=present_card;
 			strongest_card_owner=present_card_owner;
 		}else {
-			if(true) { //real compare card (if condition may change)
+			if(stronger()) { //real compare card (if condition may change)
 				//change winner card
 			}
 		}
