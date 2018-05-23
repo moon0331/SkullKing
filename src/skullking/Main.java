@@ -1,5 +1,9 @@
 //https://github.com/moon0331/SkullKing
 
+//https://www.grandpabecksgames.com/copy-of-rules-cya
+
+//https://boardgamegeek.com/boardgame/150145/skull-king
+
 package skullking;
 
 public class Main {
