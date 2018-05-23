@@ -6,6 +6,7 @@ import java.util.Random;
 
 
 public class CardDeck {
+	private final int NUM_OF_CARD=55;
 	private List<Card> list;
 	
 	public CardDeck(int num) {
