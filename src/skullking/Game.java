@@ -8,10 +8,12 @@ public class Game{
 	private int winner; //winner of the game
 	private CardDeck deck;
 	private Comparator comparator;
+	private final int NUM_OF_CARD=55; // what is the number of card?
 	
 	public Game(Player[] player) { //player setting, make comparator
 		p=player;
 		comparator=new Comparator();
+		deck=new CardDeck(NUM_OF_CARD);
 	}
 	
 	public void playGame(int round) { //game process
