@@ -43,7 +43,7 @@ public class Player implements PlayerInfo {
 	public int getScore() {
 		return score;
 	}
-	public void setWinner() {
-		won_previous_game=true;
+	public void setWinner(boolean val) {	// need to make won_previous_game false
+		won_previous_game=val;
 	}
 }
