@@ -15,6 +15,10 @@ public class Player implements PlayerInfo {
 		name=s;
 	}
 	
+	public String getName() {
+		return name;
+	}
+	
 	public void addCard(Card c) { //add card from game-deck
 		deck.add(c);
 	}
@@ -35,5 +39,11 @@ public class Player implements PlayerInfo {
 	}
 	public void calScore(int score) { //plus(or minus) score
 		this.score+=score;
+	}
+	public int getScore() {
+		return score;
+	}
+	public void setWinner() {
+		won_previous_game=true;
 	}
 }
