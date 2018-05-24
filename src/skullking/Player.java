@@ -29,6 +29,10 @@ public class Player implements PlayerInfo {
 		//System.out.println(deck.size()+"==size of deck");
 	}
 	public Card playCard(int constraint) { //play a card
+		
+		/*
+		 * 앞사람이 낸 카드가 있을경우 아무거나 내도 됨, 앞사람이 숫자카드를 낸 경우에는 자기는 그 색의 숫자 또는 특수카드를 내야함 다만 그 색이 없다면 아무거나 내도 됨
+		 * */
 		System.out.println("input number to pick");
 		int val;
 		val=0;
