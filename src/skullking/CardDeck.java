@@ -9,7 +9,7 @@ public class CardDeck {
 	private List<Card> list;
 	
 	public CardDeck(int num) {
-		list=new ArrayList<Card>();
+		list=new ArrayList<Card>(num);
 		for(int i=0; i<num; i++) {
 			list.add(new Card(i));
 		}
@@ -17,7 +17,8 @@ public class CardDeck {
 	}
 	public Card pickCard() {
 		Random random=new Random();
-		int idx=random.nextInt() % list.size();
+		int idx=random.nextInt(list.size());
+		System.out.println("card number "+idx+" selected");
 		Card picked=list.get(idx); 
 		list.remove(idx);
 		return picked; //randomly pick card to player
