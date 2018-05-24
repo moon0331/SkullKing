@@ -10,7 +10,7 @@ public class GameStarter {
 	
 	public void setNumOfPlayer() {
 		Scanner s=new Scanner(System.in);
-		int numOfPlayer=0;
+		numOfPlayer=0;
 		while(true) {
 			try {
 				System.out.print("Input the number of player : ");
@@ -33,7 +33,8 @@ public class GameStarter {
 	
 	public Player[] makePlayer() {
 		player=new Player[numOfPlayer];
-		for(int i=0; i<player.length; i++) {
+		for(int i=0; i<numOfPlayer; i++) {
+			player[i]=new Player();
 			player[i].setName(NameList[i]); 
 		}
 		return player;
