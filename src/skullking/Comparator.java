@@ -32,4 +32,7 @@ public class Comparator implements ComparatorInfo {
 	public boolean stronger() { //modify
 		return false;
 	}
+	public int getConstraint() {
+		return constraint;
+	}
 }
