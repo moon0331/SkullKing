@@ -26,51 +26,51 @@ public class Card implements CardInfo {
 	public Card(int i) {
 		idx=i;
 		
-		if(idx<=0) //escape은 5개 -4~0까지 
+		if(idx<=4) //escape은 5개 0~4까지 
 		{
 			card_type="escape"; 
 		} 
 		
-		else if(i<=13)
+		else if(i<=17)
 		{
-			card_type="gold";//1~13 gold
+			card_type="gold";//5~17 gold
 			card_num=i%13+1;
 		}
 		
-		else if(i<=26)
+		else if(i<=30)
 		{
-			card_type="red"; //14~26 red
+			card_type="red"; //17~30 red
 			card_num=i%13+1;
 		}
 		
-		else if(i<=39)
+		else if(i<=43)
 		{
-			card_type="blue"; //27~39 blue
+			card_type="blue"; //31~43 blue
 			card_num=i%13+1;
 		}
 		
-		else if(i<=52)
+		else if(i<=56)
 		{
-			card_type="black";//40~52 black
+			card_type="black";//44~56 black
 			card_num=i%13+1;
 		}
 		
-		else if(i==53|i==54) //two mermaid
+		else if(i==57|i==58) //two mermaid
 		{
 			card_type="mermaid";
 		} 
 		
-		else if(i<=59)//55,56,57,58,59 pirate 5 cards
+		else if(i<=63)//59~63 pirate 5 cards
 		{
 			card_type="pirate";
 		}
 		
-		else if(i==60)//60 scarymarry just one
+		else if(i==64)//64 scarymarry just one
 		{
 			card_type="scarymarry"; //�̰� comparator ���� ó���� �� ��
 		}
 		
-		else //61->skullking
+		else //65->skullking
 		{
 			card_type="skullking"; //idx =56�� �� ����
 		}
