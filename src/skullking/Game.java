@@ -17,15 +17,11 @@ public class Game{
 	}
 	
 	public void playGame(int round) { //game process
-		Scanner s=new Scanner(System.in);
 		for(int i=0; i<p.length; i++) { //for all player
-			for(int j=0; i<round; j++) {
+			for(int j=0; j<round; j++) {
 				p[i].addCard(deck.pickCard()); //each player pick card in deck round times
 			}
-			
-			System.out.println("player "+ i +" turn to predict win: ");
-			int win=s.nextInt(); // exception needed!!!!!!!!!!!!!!!!!!!!!
-			p[i].setPredictWin(win); //prediction
+			p[i].setPredictWin(round); //prediction
 		} 
 		//now, each player has their own card in p.cardDeck, and all players predicted their number to win.
 		
@@ -36,8 +32,6 @@ public class Game{
 		}
 		winner=comparator.getWinner();
 		//or use int[] calculatedScore=calScore(player); function that calculate gained/losed score
-		
-		s.close();
 	}
 	public void setWinner(int p) {
 		winner=p;
