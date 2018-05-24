@@ -6,7 +6,7 @@ public class GameStarter {
 	
 	private int numOfPlayer;
 	private Player[] player;
-	private String[] NameList= {"Momo", "Joy", "Kei", "Solar", "Jisoo", "Yuju", "YooA"};
+	private String[] NameList= {"(1)Momo", "(2)Joy", "(3)Kei", "(4)Solar", "(5)Jisoo", "(6)Yuju", "(7)YooA"};
 	
 	public void setNumOfPlayer() {
 		Scanner s=new Scanner(System.in);
@@ -23,7 +23,7 @@ public class GameStarter {
 				s.nextLine(); // flush buffer
 				System.out.println("NOT NUMBER");
 			}
-		}
+		}s.nextLine();
 		s.close();
 	}
 	

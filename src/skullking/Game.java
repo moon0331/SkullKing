@@ -27,7 +27,7 @@ public class Game{
 		
 		for(int i=0; i<p.length; i++) {
 			System.out.println("put the card! : Player"+i);
-			Card c=p[i].playCard(i); //each player play a card 
+			Card c=p[i].playCard(comparator.getConstraint()); //each player play a card 
 			comparator.setCard(i,c); //on comparator
 		}
 		winner=comparator.getWinner();
