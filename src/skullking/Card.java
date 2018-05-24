@@ -2,31 +2,31 @@ package skullking;
 
 public class Card implements CardInfo {
 	private int idx;
-	private String card_type;//Ä«µå Å¸ÀÔ string²Ã·Î Ç¥ÇöÇÏµçÁö ¾Æ´Ô int·Î Ç¥ÇöÇÏµçÁö
+	private String card_type;//Ä«ï¿½ï¿½ Å¸ï¿½ï¿½ stringï¿½Ã·ï¿½ Ç¥ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ ï¿½Æ´ï¿½ intï¿½ï¿½ Ç¥ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½
 	private int card_num;  
 	/*  
 	 * (skullking, 
 	 * pirate, 
-	 * scarymarry-ÇØÀûÀ¸·Îµµ ¾µ ¼ö ÀÖ°í Ç×º¹±â·Îµµ ¾µ ¼ö ÀÖ´Â, 
+	 * scarymarry-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½×ºï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½, 
 	 * mermaid, 
 	 * black, 
 	 * gold, red, blue, 
 	 * escape)
 	 * 
-	 * enum ³ªÁß¿¡ »ç¿ëÇÒ¼öµµ ÀÖÀ½
+	 * enum ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½ï¿½ï¿½ï¿½Ò¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	*/
 	
-	/* ¹Ýº¹¹®À¸·Î ¿¬¼ÓÀûÀ¸·Î »ý¼ºÀÚ¸¦ ºÒ·¯¿À±â ¶§¹®¿¡, »ý¼ºÀÚ´Â ÇÏ³ªÀÇ ¸ð¾çÀ¸·Î ÅëÀÏÇØ¾ß ÇÔ. public Card(int i)·Î idx=i·Î ¸¸µç ÈÄ, 
-	 * iÀÇ ¹üÀ§¿¡ µû¶ó Ä«µåÀÇ Æ¯Â¡À» ºÐ·ù(ifÀý È°¿ë)ÇØ¾ß ÇÔ. 
-	 * (Ex: 0¹øÀº escape, 1~13Àº red, 14~26Àº blue, ..., n¹øÀº skullkingÀ¸·Î ÇÑ´Ù¸é,
-	 * °¢°¢ÀÇ ¹üÀ§¿¡ µû¶ó card_num°¡ card_type°¡ ´Þ¶óÁú °ÍÀÓ)
-	 * idx°¡ primary keyÀÇ ¿ªÇÒÀ» ÇÑ´Ù º¸¸é µÊ. (ÇÊ¿ä¾ø¾îÁö¸é Áö¿ï°ÅÀÓ)
+	/* ï¿½Ýºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½ï¿½. public Card(int i)ï¿½ï¿½ idx=iï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½, 
+	 * iï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½ï¿½ï¿½ Æ¯Â¡ï¿½ï¿½ ï¿½Ð·ï¿½(ifï¿½ï¿½ È°ï¿½ï¿½)ï¿½Ø¾ï¿½ ï¿½ï¿½. 
+	 * (Ex: 0ï¿½ï¿½ï¿½ï¿½ escape, 1~13ï¿½ï¿½ red, 14~26ï¿½ï¿½ blue, ..., nï¿½ï¿½ï¿½ï¿½ skullkingï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´Ù¸ï¿½,
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ card_numï¿½ï¿½ card_typeï¿½ï¿½ ï¿½Þ¶ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
+	 * idxï¿½ï¿½ primary keyï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½. (ï¿½Ê¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 	 */
 	
 	public Card(int i) {
 		idx=i;
 		
-		if(idx==0)
+		if(idx<=0) //escapeì€ 5ê°œ -4~0ê¹Œì§€ 
 		{
 			card_type="escape"; 
 		} 
@@ -55,24 +55,24 @@ public class Card implements CardInfo {
 			card_num=i%13+1;
 		}
 		
-		else if(i==53)
+		else if(i==53|i==54) //two mermaid
 		{
 			card_type="mermaid";
 		} 
 		
-		else if(i==54)
+		else if(i<=59)//55,56,57,58,59 pirate 5 cards
 		{
 			card_type="pirate";
 		}
 		
-		else if(i==55)
+		else if(i==60)//60 scarymarry just one
 		{
-			card_type="scarymarry"; //ÀÌ°Å comparator ¿¡¼­ Ã³¸®ÇÒ ¶§ Á¶
+			card_type="scarymarry"; //ï¿½Ì°ï¿½ comparator ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½
 		}
 		
-		else 
+		else //61->skullking
 		{
-			card_type="skullking"; //idx =56ÀÏ ¶§ ½ºÄÃ
+			card_type="skullking"; //idx =56ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		}
 		
 	}
