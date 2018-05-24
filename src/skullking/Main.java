@@ -7,7 +7,7 @@
 package skullking;
 
 public class Main {
-	final int NUMBER_OF_CARD=65;
+	final int NUMBER_OF_CARD=66;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
