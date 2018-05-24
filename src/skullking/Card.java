@@ -2,31 +2,24 @@ package skullking;
 
 public class Card implements CardInfo {
 	private int idx;
-	private String card_type;//ī�� Ÿ�� string�÷� ǥ���ϵ��� �ƴ� int�� ǥ���ϵ���
+	private String card_type;//represent card type either string or int
 	private int card_num;  
 	/*  
 	 * (skullking, 
 	 * pirate, 
-	 * scarymarry-�������ε� �� �� �ְ� �׺���ε� �� �� �ִ�, 
+	 * scarymarry- either pirate(?) or escape
 	 * mermaid, 
 	 * black, 
 	 * gold, red, blue, 
 	 * escape)
 	 * 
-	 * enum ���߿� ����Ҽ��� ����
+	 * enum may be used
 	*/
-	
-	/* �ݺ������� ���������� �����ڸ� �ҷ����� ������, �����ڴ� �ϳ��� ������� �����ؾ� ��. public Card(int i)�� idx=i�� ���� ��, 
-	 * i�� ������ ���� ī���� Ư¡�� �з�(if�� Ȱ��)�ؾ� ��. 
-	 * (Ex: 0���� escape, 1~13�� red, 14~26�� blue, ..., n���� skullking���� �Ѵٸ�,
-	 * ������ ������ ���� card_num�� card_type�� �޶��� ����)
-	 * idx�� primary key�� ������ �Ѵ� ���� ��. (�ʿ�������� �������)
-	 */
 	
 	public Card(int i) {
 		idx=i;
 		
-		if(idx<=4) //escape은 5개 0~4까지 
+		if(idx<=4) //5 cards for escape 
 		{
 			card_type="escape"; 
 		} 
@@ -39,7 +32,7 @@ public class Card implements CardInfo {
 		
 		else if(i<=30)
 		{
-			card_type="red"; //17~30 red
+			card_type="red"; //18~30 red
 			card_num=i%13+1;
 		}
 		
@@ -55,7 +48,7 @@ public class Card implements CardInfo {
 			card_num=i%13+1;
 		}
 		
-		else if(i==57|i==58) //two mermaid
+		else if(i==57 || i==58) //two mermaid
 		{
 			card_type="mermaid";
 		} 
