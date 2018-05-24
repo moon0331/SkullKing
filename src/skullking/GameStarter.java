@@ -12,14 +12,15 @@ public class GameStarter {
 		Scanner s=new Scanner(System.in);
 		int numOfPlayer=0;
 		while(true) {
-			System.out.println("Input the number of player : ");
 			try {
+				System.out.print("Input the number of player : ");
 				numOfPlayer=s.nextInt();
-				if(numOfPlayer>=1 && numOfPlayer<=5)
+				if(numOfPlayer>=3 && numOfPlayer<=6)
 					break;
 				else
 					System.out.println("Unavailable number of player.");
 			} catch(Exception e) {
+				s.nextLine();
 				System.out.println("NOT NUMBER");
 			}
 		}
