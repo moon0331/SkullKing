@@ -26,11 +26,14 @@ public class Player implements PlayerInfo {
 	public void addCard(Card c) { //add card from game-deck
 		System.out.println("player "+ name +" adds Card.");
 		deck.add(c);
+		//System.out.println(deck.size()+"==size of deck");
 	}
 	public Card playCard(int constraint) { //play a card
 		System.out.println("input number to pick");
 		int val;
-		while(true){
+		val=0;
+		
+		/*while(true){
 			Scanner s=new Scanner(System.in);
 			try {
 				val=s.nextInt();
@@ -40,14 +43,16 @@ public class Player implements PlayerInfo {
 			}finally {
 				s.close();
 			}
-		}
+		}*/
+		Card c=deck.get(val);
 		deck.remove(val);
-		return deck.get(val);
+		return c;
 	}
 	public void setPredictWin(int round) { //predict the number of win
 		System.out.println(name +"'s turn to predict win: ");
 		Scanner s=new Scanner(System.in);
-		try {
+		predict_num_of_win=0;
+		/*try {
 			predict_num_of_win=s.nextInt(); // why NoSuchElementException ?????
 			if(predict_num_of_win<0 || predict_num_of_win>round) {
 				System.out.println("Not Valid number of win. Set prediction to zero.");
@@ -55,9 +60,9 @@ public class Player implements PlayerInfo {
 			}
 		} catch(Exception e){
 			System.out.println("win number: "+predict_num_of_win);
-			System.out.println("======Exception! Set the number of win zero.");
+			System.out.println("Exception! Set the number of win zero.");
 			predict_num_of_win=0;
-		}
+		}*/
 		s.close();
 	}
 	public void calScore(int score) { //plus(or minus) score
