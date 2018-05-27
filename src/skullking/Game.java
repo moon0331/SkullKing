@@ -8,7 +8,7 @@ public class Game{
 	private int winner; //winner of the game
 	private CardDeck deck;
 	private Comparator comparator;
-	private final int NUM_OF_CARD=55; // what is the number of card?
+	private final int NUM_OF_CARD=66; // 66
 	
 	public Game(Player[] player) { //player setting, make comparator
 		p=player;
