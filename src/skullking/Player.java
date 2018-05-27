@@ -28,7 +28,7 @@ public class Player implements PlayerInfo {
 		deck.add(c);
 		//System.out.println(deck.size()+"==size of deck");
 	}
-	public Card playCard(int constraint) { //play a card
+	public Card playCard(int constraint) { //play a card ,여기서 너가 써놓은 constraint가 그 숫자카드 나오면 내는 카드 제한시키는 그거라고 생각함 constraint= standard_card(game class 에 있는)
 		
 		/*
 		 * 앞사람이 낸 카드가 숫자카드가 아닌 경우 아무거나 내도 됨, 앞사람이 숫자카드를 낸 경우에는 자기는 그 색의 숫자 또는 특수카드를 내야함 다만 그 색이 없다면 아무거나 내도 됨
@@ -37,17 +37,39 @@ public class Player implements PlayerInfo {
 		int val;
 		val=0;
 		
-		/*while(true){
+		while(true){
 			Scanner s=new Scanner(System.in);
 			try {
 				val=s.nextInt();
+			    /*if (constraint>=5&&constraint<=17)
+			    {
+			    	if(val>=5 && val<=17) break;   
+			    }
+			    
+			    else if(constraint>=18&&constraint<=30)
+			    {
+			    	if(val>=18 && val<=30) break;  
+			    }
+			    
+			    else if(constraint>=31&&constraint<=43)
+			    {
+			    	if(val>=31 && val<=43) break;  
+			    } 
+			    
+			    else if(constraint>=44&&constraint<=56)
+			    {
+			    	if(val>=44 && val<=56) break;  
+			    } 
+			    요로케롬 해서 constraint 값을 받고 그 값이 속하는 카드 범위(카드 색깔)찾은 다음에 낼 수 있는 카드숫자의 범위를 저렇게 제한시키려고 하는데 일단 val 값은 저렇게 쓰면 안될 것 같아서 주석 처리로 해놓음 이거는 내일 너랑 얘기해서 코드 좀 손봐야할듯.
+			    */ 
 				if(val>=0 && val<deck.size()) break;
+				
 			} catch(Exception e){
 				System.out.println("Exception : unvalid input");
 			}finally {
 				s.close();
 			}
-		}*/
+		}
 		Card c=deck.get(val);
 		deck.remove(val);
 		return c;
