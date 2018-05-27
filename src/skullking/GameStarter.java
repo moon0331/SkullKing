@@ -15,7 +15,7 @@ public class GameStarter {
 			try {
 				System.out.print("Input the number of player : ");
 				numOfPlayer=s.nextInt();
-				if(numOfPlayer>=3 && numOfPlayer<=6)
+				if(numOfPlayer>=2 && numOfPlayer<=6) //this game can be played with 2 people. 
 					break;
 				else
 					System.out.println("Unavailable number of player.");
