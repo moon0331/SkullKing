@@ -29,10 +29,9 @@ public class Game{
 		for(int i=0; i<p.length; i++) {
 			System.out.println("put the card! : Player"+i);
 			Card c=p[i].playCard(round, standard_card); //each player play a card 
-			int cardNum=c.getNum();
-		    if(standard_card==-1 && cardNum>=5 && cardNum<=56)//기준이 되는 카드가 없고 내려놓은 카드가 숫자카드일 경우,escape 카드는 0부터 4까지
+		    if(standard_card==-1 && c.isNormalCard())//기준이 되는 카드가 없고 내려놓은 카드가 숫자카드일 경우,escape 카드는 0부터 4까지
 		    {
-		       standard_card=cardNum;
+		       standard_card=c.getNum();
 		    }
 			
 			comparator.setCard(i,c); //on comparator
