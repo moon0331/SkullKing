@@ -4,6 +4,10 @@
 
 //https://boardgamegeek.com/boardgame/150145/skull-king
 
+//http://allg.tistory.com/17 무한루프 문제
+
+//http://egloos.zum.com/LucasLee/v/571015 무한루프 문제 2
+
 package skullking;
 
 public class Main {
