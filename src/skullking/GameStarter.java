@@ -6,7 +6,7 @@ public class GameStarter {
 	
 	private int numOfPlayer;
 	private Player[] player;
-	private String[] NameList= {"(1)Momo", "(2)Joy", "(3)Kei", "(4)Solar", "(5)Jisoo", "(6)Yuju", "(7)YooA"};
+	private String[] NameList= {"Momo", "Joy", "Kei", "Solar", "Jisoo", "Yuju", "YooA"};
 	
 	public void setNumOfPlayer() {
 		Scanner s=new Scanner(System.in);
@@ -14,7 +14,7 @@ public class GameStarter {
 		while(true) {
 			try {
 				System.out.print("Input the number of player : ");
-				numOfPlayer=s.nextInt();
+				numOfPlayer=Integer.parseInt(s.nextLine());
 				if(numOfPlayer>=2 && numOfPlayer<=6) //this game can be played with 2 people. 
 					break;
 				else
@@ -23,7 +23,7 @@ public class GameStarter {
 				s.nextLine(); // flush buffer
 				System.out.println("NOT NUMBER");
 			}
-		}s.nextLine();
+		}
 		s.close();
 	}
 	
