@@ -85,4 +85,7 @@ public class Card implements CardInfo {
 	public void setNum(int num) {
 		card_num=num;
 	}
+	public boolean isNormalCard() {
+		return idx>=5 && idx<=56;
+	}
 }
