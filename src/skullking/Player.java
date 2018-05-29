@@ -9,6 +9,7 @@ public class Player implements PlayerInfo {
 	private String name;
 	private int score;
 	private int predict_num_of_win;
+	private int num_of_win;
 	private boolean won_previous_game;
 	private List<Card> deck;
 	private List<Boolean> cardValidity;
@@ -112,6 +113,20 @@ public class Player implements PlayerInfo {
 	public void setValidity(int current_card) { //카드 번호가 들어감
 		for(int i=0; i<cardValidity.size(); i++) { //각 카드가 낼 수 있는지 확인...................
 			
+		}
+	}
+	public void calScore_predict(int round) {
+		if(predict_num_of_win==0) {
+			if(num_of_win==0) score+=10*round;
+			else score-=10*round;
+		}
+		else if(predict_num_of_win==num_of_win) {
+			score+=20*predict_num_of_win;
+		}
+		else {
+			int diff=predict_num_of_win-num_of_win;
+			if(diff<0) diff*=-1;
+			score-=10*diff;
 		}
 	}
 }
