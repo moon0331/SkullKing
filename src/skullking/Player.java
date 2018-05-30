@@ -126,7 +126,7 @@ public class Player implements PlayerInfo {
 		else {
 			int diff=predict_num_of_win-num_of_win;
 			if(diff<0) diff*=-1;
-			score-=10*diff;
+			score-=20*diff;
 		}
 	}
 }
