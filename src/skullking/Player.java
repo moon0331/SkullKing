@@ -43,29 +43,49 @@ public class Player implements PlayerInfo {
 		while(true){
 			Scanner s=new Scanner(System.in);
 			try {
+		        while(true)
+		        {
+		        	val=Integer.parseInt(s.nextLine()); 
+		        	if (constraint>=5&&constraint<=17)
+				    {
+				    	if( (val>=5 && val<=17) ||val>=57|| val<=4) break;   //val>=57부터는 특수카드이므로 먼저 낸 숫자카드와 상관없이 낼 수 있음 0~5도 escape,특수카드이므로 
+				    	else 
+				    		System.out.println("u can not play it");
+				    }
+				    
+				    else if(constraint>=18&&constraint<=30)
+				    {
+				    	if((val>=18 && val<=30)||val>=57|| val<=4) break;  
+				    	else 
+				    		System.out.println("u can not play it");
+
+				    }
+				    
+				    else if(constraint>=31&&constraint<=43)
+				    {
+				    	if((val>=31 && val<=43)||val>=57|| val<=4) break;  
+				    	else 
+				    		System.out.println("u can not play it");
+
+				    } 
+				    
+				    else if(constraint>=44&&constraint<=56)
+				    {
+				    	if((val>=44 && val<=56)||val>=57|| val<=4) break;  
+				    	else 
+				    		System.out.println("u can not play it");
+
+				    } 
+				    else 
+				    	break;
+		        }//올바른 카드 낼 때까지 val값을 계속 받음 이건 나중에 처리해서 바꿔도 
+				
+				
+				
+				
 				val=Integer.parseInt(s.nextLine());
 				System.out.println(val+"picked");
-			    /*if (constraint>=5&&constraint<=17)
-			    {
-			    	if(val>=5 && val<=17) break;   
-			    }
-			    
-			    else if(constraint>=18&&constraint<=30)
-			    {
-			    	if(val>=18 && val<=30) break;  
-			    }
-			    
-			    else if(constraint>=31&&constraint<=43)
-			    {
-			    	if(val>=31 && val<=43) break;  
-			    } 
-			    
-			    else if(constraint>=44&&constraint<=56)
-			    {
-			    	if(val>=44 && val<=56) break;  
-			    } 
-			    요로케롬 해서 constraint 값을 받고 그 값이 속하는 카드 범위(카드 색깔)찾은 다음에 낼 수 있는 카드숫자의 범위를 저렇게 제한시키려고 하는데 일단 val 값은 저렇게 쓰면 안될 것 같아서 주석 처리로 해놓음 이거는 내일 너랑 얘기해서 코드 좀 손봐야할듯.
-			    */ 
+			 
 				if(val>=0 && val<deck.size()) break;
 				
 			} catch(Exception e){
