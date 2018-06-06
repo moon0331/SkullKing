@@ -124,6 +124,11 @@ public class Card implements CardInfo {
     
     public static boolean isSpecial(int val) {
     	return val<=4 || val>=57;
+    } 
+    
+    public static boolean isNormalCard(int val) {
+    	return val>=5 && val<=56;
     }
     
-}
+    
+    }
