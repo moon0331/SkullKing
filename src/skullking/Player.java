@@ -46,32 +46,32 @@ public class Player implements PlayerInfo {
 		        while(true)
 		        {
 		        	val=Integer.parseInt(s.nextLine()); 
-		        	if (constraint>=5&&constraint<=17)
+		        	if (Card.isGold(constraint))
 				    {
-				    	if( (val>=5 && val<=17) ||val>=57|| val<=4) break;   //val>=57부터는 특수카드이므로 먼저 낸 숫자카드와 상관없이 낼 수 있음 0~5도 escape,특수카드이므로 
+				    	if( Card.isGold(val) || Card.isSpecial(val)) break;   //val>=57부터는 특수카드이므로 먼저 낸 숫자카드와 상관없이 낼 수 있음 0~5도 escape,특수카드이므로 
 				    	else 
 				    		System.out.println("u can not play it");
 				    }
 				    
-				    else if(constraint>=18&&constraint<=30)
+				    else if(Card.isRed(constraint))
 				    {
-				    	if((val>=18 && val<=30)||val>=57|| val<=4) break;  
+				    	if(Card.isRed(val) || Card.isSpecial(val)) break;  
 				    	else 
 				    		System.out.println("u can not play it");
 
 				    }
 				    
-				    else if(constraint>=31&&constraint<=43)
+				    else if(Card.isBlue(constraint))
 				    {
-				    	if((val>=31 && val<=43)||val>=57|| val<=4) break;  
+				    	if(Card.isBlue(val) || Card.isSpecial(val)) break;  
 				    	else 
 				    		System.out.println("u can not play it");
 
 				    } 
 				    
-				    else if(constraint>=44&&constraint<=56)
+				    else if(Card.isBlack(constraint))
 				    {
-				    	if((val>=44 && val<=56)||val>=57|| val<=4) break;  
+				    	if(Card.isBlack(val) || Card.isSpecial(val)) break;  
 				    	else 
 				    		System.out.println("u can not play it");
 

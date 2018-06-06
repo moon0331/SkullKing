@@ -85,7 +85,45 @@ public class Card implements CardInfo {
 	public void setNum(int num) {
 		card_num=num;
 	}
-	public boolean isNormalCard() {
-		return idx>=5 && idx<=56;
-	}
+	
+    public static boolean isEscape(int val){
+    	return val<=4;
+    }
+    
+    public static boolean isGold(int val){
+    	return val>=5 && val<=17;
+    }
+    
+    public static boolean isRed(int val){
+    	return val>=18 && val<=30;
+    }
+    
+    public static boolean isBlue(int val){
+	    return val>=31 && val<=43;
+    }
+    
+    public static boolean isBlack(int val){
+    	return val>=44 && val<=56;
+    }
+    
+    public static boolean isMermaid(int val){
+    	return val>=57 && val<=58; 
+    }   
+    
+    public static boolean isPirate(int val){
+    	return val>=59 && val<=63;
+    }   
+    
+    public static boolean isScarymarry(int val){
+    	return val==64;
+    } 
+
+    public static boolean isSkullking(int val){
+	    return val==65;
+    }  
+    
+    public static boolean isSpecial(int val) {
+    	return val<=4 || val>=57;
+    }
+    
 }
