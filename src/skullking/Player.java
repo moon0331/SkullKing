@@ -48,14 +48,14 @@ public class Player implements PlayerInfo {
 		        	val=Integer.parseInt(s.nextLine()); 
 		        	if (Card.isGold(constraint))
 				    {
-				    	if( Card.isGold(val) || Card.isSpecial(val)) break;   //val>=57부터는 특수카드이므로 먼저 낸 숫자카드와 상관없이 낼 수 있음 0~5도 escape,특수카드이므로 
+				    	if( CanPlay_Free(deck,constraint)||Card.isGold(val) || Card.isSpecial(val)) break;   //val>=57부터는 특수카드이므로 먼저 낸 숫자카드와 상관없이 낼 수 있음 0~5도 escape,특수카드이므로 
 				    	else 
 				    		System.out.println("u can not play it");
 				    }
 				    
 				    else if(Card.isRed(constraint))
 				    {
-				    	if(Card.isRed(val) || Card.isSpecial(val)) break;  
+				    	if( CanPlay_Free(deck,constraint)||Card.isRed(val) || Card.isSpecial(val)) break;  
 				    	else 
 				    		System.out.println("u can not play it");
 
@@ -63,7 +63,7 @@ public class Player implements PlayerInfo {
 				    
 				    else if(Card.isBlue(constraint))
 				    {
-				    	if(Card.isBlue(val) || Card.isSpecial(val)) break;  
+				    	if( CanPlay_Free(deck,constraint)||Card.isBlue(val) || Card.isSpecial(val)) break;  
 				    	else 
 				    		System.out.println("u can not play it");
 
@@ -71,7 +71,7 @@ public class Player implements PlayerInfo {
 				    
 				    else if(Card.isBlack(constraint))
 				    {
-				    	if(Card.isBlack(val) || Card.isSpecial(val)) break;  
+				    	if( CanPlay_Free(deck,constraint)||Card.isBlack(val) || Card.isSpecial(val)) break;  
 				    	else 
 				    		System.out.println("u can not play it");
 
@@ -148,5 +148,56 @@ public class Player implements PlayerInfo {
 			if(diff<0) diff*=-1;
 			score-=20*diff;
 		}
-	}
+	} 
+	
+   public boolean CanPlay_Free(List<Card> deck, int constraint) { //만약에 손패에 제한시키는 색깔 카드가 없다면 true 있다면 false를 반환하는 함
+	   boolean flag=true; 
+	   for(int i=0;i<deck.size();i++)
+	   {
+		   
+		   val= deck.get(i);
+		   
+       	if (Card.isGold(constraint))
+		    {
+		        if (Card.isGold(val)) 
+		        {
+		        	flag=false;
+		        	break;
+		        }
+		    }
+		    
+		    else if(Card.isRed(constraint))
+		    {
+		    	if (Card.isRed(val)) 
+			    {
+			        flag=false; 
+			        break;
+			    }
+
+		    }
+		    
+		    else if(Card.isBlue(constraint))
+		    {
+		    	if (Card.isBlue(val)) 
+			    {
+			        flag=false; 
+			        break;
+			    }
+		    } 
+		    
+		    else if(Card.isBlack(constraint))
+		    {
+		    	if (Card.isRed(val)) 
+			    {
+			        flag=false; 
+			        break; 
+			    }
+		    } 
+		    else 
+		    	break;
+	   }
+	   
+	   return flag;
+	   
+   }
 }
