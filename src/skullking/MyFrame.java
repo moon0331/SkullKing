@@ -44,7 +44,7 @@ public class MyFrame extends JFrame{
 			//System.out.println(c.retString());
 			try {
 				//JButton b=new JButton(new ImageIcon("D:/joy.png"));
-				CardButton b=new CardButton(new ImageIcon("D:/joy.png"),i+"번째 조이", i);
+				CardButton b=new CardButton(new ImageIcon("joy.png"),i+"번째 조이", i);
 				//b.setName("조이");
 				/*b.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent ev) {
