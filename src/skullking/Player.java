@@ -27,6 +27,7 @@ public class Player implements PlayerInfo {
 	}
 	
 	public void addCard(Card c) { //add card from game-deck
+		System.out.println("=============================");
 		System.out.println("player "+ name +" adds Card.");
 		deck.add(c);
 		//System.out.println(deck.size()+"==size of deck");
@@ -45,7 +46,8 @@ public class Player implements PlayerInfo {
 			try {
 		        while(true)
 		        {
-		        	val=Integer.parseInt(s.nextLine()); 
+		        	//val=Integer.parseInt(s.nextLine()); 
+		        	val=15;
 		        	if (Card.isGold(constraint))
 				    {
 				    	if( CanPlay_Free(deck,constraint)||Card.isGold(val) || Card.isSpecial(val)) break;   //val>=57부터는 특수카드이므로 먼저 낸 숫자카드와 상관없이 낼 수 있음 0~5도 escape,특수카드이므로 
@@ -90,7 +92,7 @@ public class Player implements PlayerInfo {
 				
 			} catch(Exception e){
 				System.out.println("Exception : unvalid input");
-				setValidity(); //cardValidity 체크해서 되는것 임의로 고르게 해야 함 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
+				//setValidity(); //cardValidity 체크해서 되는것 임의로 고르게 해야 함 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
 				val=0; //임시방편 (룰에 맞는 카드 내도록 해야 함)
 				break;
 			}finally {
@@ -105,8 +107,8 @@ public class Player implements PlayerInfo {
 		System.out.print(name +"'s turn to predict win: ");
 		Scanner s=new Scanner(System.in);
 		Random r=new Random();
-		//predict_num_of_win=0;
-		predict_num_of_win=r.nextInt(round);
+		predict_num_of_win=0;
+		//predict_num_of_win=r.nextInt(round);
 		/*try {
 			predict_num_of_win=s.nextInt(); // why NoSuchElementException ?????
 			if(predict_num_of_win<0 || predict_num_of_win>round) {

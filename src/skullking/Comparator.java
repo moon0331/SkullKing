@@ -1,6 +1,6 @@
 package skullking;
 
-public class Comparator implements ComparatorInfo { 
+public class Comparator{ 
 	//where people put card
 	private Card present_card;
 	private int present_card_owner;

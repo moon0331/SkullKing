@@ -1,6 +1,8 @@
 package skullking;
 
-public class Card implements CardInfo {
+import javax.swing.*;
+
+public class Card extends JButton{
 	private int idx;
 	private String card_type;//represent card type either string or int
 	private int card_num;  

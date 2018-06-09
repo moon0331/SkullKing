@@ -2,7 +2,9 @@ package skullking;
 
 import java.util.Scanner;
 
-public class Game{
+import javax.swing.*;
+
+public class Game extends JFrame{
 	private Player[] p;
 	//private int numOfPlayer;
 	private int winner; //winner of the game
@@ -29,7 +31,7 @@ public class Game{
 		for(int i=0; i<p.length; i++) {
 			System.out.println("put the card! : Player"+i);
 			Card c=p[i].playCard(round, standard_card); //each player play a card 
-		    if(standard_card==-1 && c.isNormalCard())//기준이 되는 카드가 없고 내려놓은 카드가 숫자카드일 경우,escape 카드는 0부터 4까지
+		    if(standard_card==-1 && Card.isNormalCard(c.getNum()))//기준이 되는 카드가 없고 내려놓은 카드가 숫자카드일 경우,escape 카드는 0부터 4까지
 		    {
 		       standard_card=c.getNum();
 		    }
