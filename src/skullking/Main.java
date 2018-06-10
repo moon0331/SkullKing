@@ -10,6 +10,7 @@
 
 package skullking;
 
+
 public class Main {
 	final int NUMBER_OF_CARD=66;
 
@@ -40,3 +41,4 @@ public class Main {
 	}
 
 }
+

@@ -157,7 +157,8 @@ public class Player implements PlayerInfo {
 	   for(int i=0;i<deck.size();i++)
 	   {
 		   
-		   val= deck.get(i);
+		   Card p= deck.get(i); 
+		   int val= p.getNum();
 		   
        	if (Card.isGold(constraint))
 		    {

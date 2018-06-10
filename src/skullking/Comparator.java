@@ -8,14 +8,11 @@ public class Comparator{
 	private int strongest_card_owner;
 	private int constraint; //constraint to set a card
 	
-	/*public void setCard(int owner, Card card) {
+	public void setCard(int owner, Card card) {
 		present_card=card;
 		present_card_owner=owner;
-		   if(){ //check that the card can included
-		 * 
-		 * }
-		 * 
-	}*/
+		
+	}
 	public void compare(Card present_card, Card strongest_card) {
 		if(strongest_card==null) {
 			strongest_card=present_card;
@@ -133,7 +130,8 @@ public class Comparator{
 				return true; 
 			else 
 				return false;
-		}
+		} 
+	    return false;
 
 		
 	}
