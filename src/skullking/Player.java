@@ -107,9 +107,10 @@ public class Player implements PlayerInfo {
 		System.out.print(name +"'s turn to predict win: ");
 		Scanner s=new Scanner(System.in);
 		Random r=new Random();
-		predict_num_of_win=0;
+		predict_num_of_win=round-1;
+		if(round==0) predict_num_of_win=0;
 		//predict_num_of_win=r.nextInt(round);
-		/*try {
+		try {
 			predict_num_of_win=s.nextInt(); // why NoSuchElementException ?????
 			if(predict_num_of_win<0 || predict_num_of_win>round) {
 				System.out.println("Not Valid number of win. Set prediction to zero.");
@@ -119,7 +120,7 @@ public class Player implements PlayerInfo {
 			System.out.println("win number: "+predict_num_of_win);
 			System.out.println("Exception! Set the number of win zero.");
 			predict_num_of_win=0;
-		}*/
+		}
 		s.close();
 		System.out.println(predict_num_of_win+"wins");
 	}
@@ -138,18 +139,23 @@ public class Player implements PlayerInfo {
 		}
 	}
 	public void calScore_predict(int round) {
+		int val=0;
 		if(predict_num_of_win==0) {
-			if(num_of_win==0) score+=10*round;
-			else score-=10*round;
+			if(num_of_win==0) val=10*round; //score+=10*round; //plus
+			else val=(-10*round);//score-=10*round; //minus
 		}
 		else if(predict_num_of_win==num_of_win) {
-			score+=20*predict_num_of_win;
+			val=20*predict_num_of_win;
+			//score+=20*predict_num_of_win; //plus
 		}
 		else {
 			int diff=predict_num_of_win-num_of_win;
 			if(diff<0) diff*=-1;
-			score-=20*diff;
+			val=(-20*diff);
+			//score-=20*diff; //minus
 		}
+		System.out.println(name+"은"+round+"에서"+val+"획득");
+		score+=val;
 	} 
 	
    public boolean CanPlay_Free(List<Card> deck, int constraint) { //만약에 손패에 제한시키는 색깔 카드가 없다면 true 있다면 false를 반환하는 함

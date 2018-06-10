@@ -30,14 +30,14 @@ public class Main {
 			 * int winner_score=____________________;
 			 * */
 			for(int i=0; i<player.length; i++) {
-				/*if(i==winner) player[i].calScore(winner_score);
-				else player[i].calScore(______);*/
+				player[i].calScore_predict(round);
 			}
 			// calculate scores
 			System.out.println("\n\n=====round "+ round +" end.======\n");
 		}
-		//int final_player_winner=-1; //represent real winner
-		//System.out.println("Winner is : "+player_winner);
+		for(Player p : player) {
+			System.out.println(p.getScore());
+		}
 	}
 
 }
