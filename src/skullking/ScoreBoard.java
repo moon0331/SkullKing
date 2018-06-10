@@ -17,6 +17,6 @@ public class ScoreBoard implements ScoreBoardInfo  {
 		}
 	}
 	public void update(int player_num, int gained_score) {
-		//blahblah
+		DB[player_num].score+=gained_score;
 	}
 }
