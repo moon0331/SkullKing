@@ -1,11 +1,12 @@
-package skullking_test;
+package skullking;
 
 import javax.swing.*;
 
 public class Card extends JButton{
 	private int idx;
 	private String card_type;//represent card type either string or int
-	private int card_num;  
+	private int card_num;   
+	private boolean validity=true;
 	/*  
 	 * (skullking, 
 	 * pirate, 
@@ -86,6 +87,15 @@ public class Card extends JButton{
 	
 	public void setNum(int num) {
 		card_num=num;
+	} 
+	
+	public boolean getValidity()
+	{
+		return validity;
+	} 
+	
+	public void setValidity(boolean s) {
+		validity=s;
 	}
 	
     public static boolean isEscape(int val){

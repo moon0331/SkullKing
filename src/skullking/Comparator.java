@@ -1,4 +1,4 @@
-package skullking_test;
+package skullking;
 
 public class Comparator{ 
 	//where people put card
