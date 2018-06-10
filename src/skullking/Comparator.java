@@ -45,7 +45,7 @@ public class Comparator{
 					return true;
 				}
 			} 
-			else if(present_card.getNum()>=44)
+			else if(present_card.getNum()>=44)//beyond the Black card
 				return true; 
 			else 
 				return false;
@@ -60,7 +60,7 @@ public class Comparator{
 					return true;
 				}
 			} 
-			else if(present_card.getNum()>=44)
+			else if(present_card.getNum()>=44)//beyond the Black card
 				return true; 
 			else 
 				return false;
@@ -75,7 +75,7 @@ public class Comparator{
 					return true;
 				}
 			} 
-			else if(present_card.getNum()>=44)
+			else if(present_card.getNum()>=44)//beyond the Black card
 				return true; 
 			else 
 				return false;
@@ -90,7 +90,7 @@ public class Comparator{
 					return true;
 				}
 			} 
-			else if(present_card.getNum()>=57)
+			else if(present_card.getNum()>=57)//beyond the Mermaid
 				return true; 
 			else 
 				return false;
@@ -98,13 +98,13 @@ public class Comparator{
 		
 		else if(Card.isMermaid(strongest_card.getNum()))//제일 쎈 카드가 인어인 경우 해적을 내거나 scarymarry 카드를 해적으로 낸 경우 stroungest 카드가 바
 		{
-			if(isPirate(present_card.getNum())) 
+			if(Card.isPirate(present_card.getNum())) 
 			{
 				return true;
 			} 
-			else if(isScarymarry(present_card.getNum()))
+			else if(Card.isScarymarry(present_card.getNum()))
 			{
-				return ture;
+				return true;
 			} 
 			else 
 				return false;
@@ -117,7 +117,14 @@ public class Comparator{
 			else 
 				return false;
 		} 
-		
+	    
+		else if(Card.isScarymarry(strongest_card.getNum()))
+		{
+			if(Card.isSkullking(present_card.getNum()))
+				return true; 
+			else 
+				return false;
+		}
 		
 		
 		else if(Card.isSkullking(strongest_card.getNum()))//제일 쎈 카드가 스컬킹일 경우 인어를 낸 경우에만 strongest 카드가 바
@@ -130,7 +137,7 @@ public class Comparator{
 
 		
 	}
-	public int getConstraint() {
+	/*public int getConstraint() {
 		return constraint;
-	}
+	}*/
 }
