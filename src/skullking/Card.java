@@ -1,4 +1,4 @@
-package skullking;
+package skullking_test;
 
 import javax.swing.*;
 

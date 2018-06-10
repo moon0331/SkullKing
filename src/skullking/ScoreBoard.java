@@ -1,5 +1,4 @@
-package skullking;
-
+package skullking_test;
 
 
 class Database{		// should be modified

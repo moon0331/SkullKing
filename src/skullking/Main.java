@@ -1,15 +1,4 @@
-//https://github.com/moon0331/SkullKing
-
-//https://www.grandpabecksgames.com/copy-of-rules-cya
-
-//https://boardgamegeek.com/boardgame/150145/skull-king
-
-//http://allg.tistory.com/17 무한루프 문제
-
-//http://egloos.zum.com/LucasLee/v/571015 무한루프 문제 2
-
-package skullking;
-
+package skullking_test;
 
 public class Main {
 	final int NUMBER_OF_CARD=66;
@@ -30,15 +19,14 @@ public class Main {
 			 * int winner_score=____________________;
 			 * */
 			for(int i=0; i<player.length; i++) {
-				player[i].calScore_predict(round);
+				/*if(i==winner) player[i].calScore(winner_score);
+				else player[i].calScore(______);*/
 			}
 			// calculate scores
 			System.out.println("\n\n=====round "+ round +" end.======\n");
 		}
-		for(Player p : player) {
-			System.out.println(p.getScore());
-		}
+		//int final_player_winner=-1; //represent real winner
+		//System.out.println("Winner is : "+player_winner);
 	}
 
 }
-
