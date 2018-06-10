@@ -1,4 +1,4 @@
-package skullking;
+package skullking_test;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -32,21 +32,20 @@ public class Player implements PlayerInfo {
 		deck.add(c);
 		//System.out.println(deck.size()+"==size of deck");
 	}
-	public Card playCard(int round, int constraint) { //play a card ,여기서 너가 써놓은 constraint가 그 숫자카드 나오면 내는 카드 제한시키는 그거라고 생각함 constraint= standard_card(game class 에 있는)
+	public Card playCard(int round, int constraint) { //play a card ,?뿬湲곗꽌 ?꼫媛? ?뜥?넃?? constraint媛? 洹? ?닽?옄移대뱶 ?굹?삤硫? ?궡?뒗 移대뱶 ?젣?븳?떆?궎?뒗 洹멸굅?씪怨? ?깮媛곹븿 constraint= standard_card(game class ?뿉 ?엳?뒗)
 		System.out.println(round+"round : "+this.name+" to pick card");
 		/*
-		 * 앞사람이 낸 카드가 숫자카드가 아닌 경우 아무거나 내도 됨, 앞사람이 숫자카드를 낸 경우에는 자기는 그 색의 숫자 또는 특수카드를 내야함 다만 그 색이 없다면 아무거나 내도 됨
+		 * ?븵?궗?엺?씠 ?궦 移대뱶媛? ?닽?옄移대뱶媛? ?븘?땶 寃쎌슦 ?븘臾닿굅?굹 ?궡?룄 ?맖, ?븵?궗?엺?씠 ?닽?옄移대뱶瑜? ?궦 寃쎌슦?뿉?뒗 ?옄湲곕뒗 洹? ?깋?쓽 ?닽?옄 ?삉?뒗 ?듅?닔移대뱶瑜? ?궡?빞?븿 ?떎留? 洹? ?깋?씠 ?뾾?떎硫? ?븘臾닿굅?굹 ?궡?룄 ?맖
 		 * */
 		System.out.println("input number to pick(constraint="+constraint+")");
-		int val; 
-		int check_non_constraint=deck.length();
-		for(i=0;i<deck.length();i++)
+		int check_non_constraint=deck.size();
+		for(int i=0;i<deck.size();i++)
 		{
 			Card pick = deck.get(i);  
 			int val=pick.getNum(); 
 			if (Card.isGold(constraint))
 		    {
-		    	if( Card.isGold(val) || Card.isSpecial(val)) continue;   //val>=57부터는 특수카드이므로 먼저 낸 숫자카드와 상관없이 낼 수 있음 0~5도 escape,특수카드이므로 
+		    	if( Card.isGold(val) || Card.isSpecial(val)) continue;   //val>=57遺??꽣?뒗 ?듅?닔移대뱶?씠誘?濡? 癒쇱? ?궦 ?닽?옄移대뱶?? ?긽愿??뾾?씠 ?궪 ?닔 ?엳?쓬 0~5?룄 escape,?듅?닔移대뱶?씠誘?濡? 
 		    	else 
 		    	{
 		    		pick.setValidity(false); 
@@ -91,26 +90,28 @@ public class Player implements PlayerInfo {
 		
 		if(check_non_constraint==0)//In that case, all cards in my hand consists of non-constraint number cards and special cards
 		{
-			for(i=0;i<deck.length();i++)
+			for(int i=0;i<deck.size();i++)
 			{
-				pick.setValidity(true);
+				deck.get(i).setValidity(true);
 			}
 
 		}
 		
 		
 			
-			
-		while (true) {
+		int val=-1;
+		for (int i=0;i<deck.size(); i++) {
 			Scanner s = new Scanner(System.in);
-			val = Integer.parseInt(s.nextLine());
+			val = i;
 			Card c = deck.get(val);
-			if (c.getValidity())
+			if (c.getValidity()) {
+				System.out.println(c.getNum()+"뽑음");
 				break;
-			else
+			}
+			else {
 				System.out.println("u can not play it, do it one more");
-		} // 올바른 카드 낼 때까지 val값을 계속 받음 이건 나중에 처리해서 바꿔도
-
+			}
+		} // ?삱諛붾Ⅸ 移대뱶 ?궪 ?븣源뚯? val媛믪쓣 怨꾩냽 諛쏆쓬 ?씠嫄? ?굹以묒뿉 泥섎━?빐?꽌 諛붽퓭?룄
 		System.out.println(val + "picked");
 		Card c=deck.get(val);
 		deck.remove(val);
@@ -143,11 +144,6 @@ public class Player implements PlayerInfo {
 	public void setWinner(boolean val) {	// need to make won_previous_game false
 		won_previous_game=val;
 	}
-	public void setValidity(int current_card) { //카드 번호가 들어감
-		for(int i=0; i<cardValidity.size(); i++) { //각 카드가 낼 수 있는지 확인...................
-			
-		}
-	}
 	public void calScore_predict(int round) {
 		int val=0;
 		if(predict_num_of_win==0) {
@@ -164,7 +160,7 @@ public class Player implements PlayerInfo {
 			val=(-20*diff);
 			//score-=20*diff; //minus
 		}
-		System.out.println(name+"은"+round+"에서"+val+"획득");
+		System.out.println(name+"??"+round+"?뿉?꽌"+val+"?쉷?뱷");
 		score+=val;
 	} 
 	
